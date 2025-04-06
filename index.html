@@ -96,6 +96,9 @@
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
 
+    // Define the backend API URL (replace with your Render URL)
+    const API_URL = "https://your-service-name.onrender.com/chat"; // Update this with your actual Render URL
+
     class ChatManager {
       constructor() {
         this.currentChatId = null;
@@ -213,8 +216,8 @@
         this.currentChatId = chatId;
         this.saveUserData();
         this.loadChat(chatId);
-        document.getElementById('current-chat-id').textContent = chatId;
         this.renderChatHistory();
+        document.getElementById('current-chat-id').textContent = chatId;
       }
 
       deleteChat(chatId) {
@@ -249,7 +252,7 @@
 
         try {
           const token = await auth.currentUser.getIdToken();
-          const response = await fetch('http://localhost:3000/chat', {
+          const response = await fetch(API_URL, {
             method: 'POST',
             headers: { 
               'Content-Type': 'application/json',
@@ -258,12 +261,16 @@
             body: JSON.stringify({ message })
           });
           
-          if (!response.ok) throw new Error('Failed to get response');
+          if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.response || 'Failed to get response from server');
+          }
+          
           const data = await response.json();
           this.addMessage('Sports AI', data.response);
           this.saveMessage(this.currentChatId, 'Sports AI', data.response);
         } catch (error) {
-          this.addMessage('Sports AI', 'Sorry, something went wrong. Try again!');
+          this.addMessage('Sports AI', `Sorry, something went wrong: ${error.message}. Please try again!`);
           console.error('Error:', error);
         } finally {
           sendBtn.disabled = false;
@@ -308,8 +315,6 @@
       redirectToLogin() {
         const returnUrl = encodeURIComponent(window.location.href);
         window.location.href = `./login.html?returnUrl=${returnUrl}`;
-       
-
       }
 
       async logout() {
