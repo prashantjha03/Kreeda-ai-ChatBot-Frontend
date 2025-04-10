@@ -3,58 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Developers</title>
+    <link rel="icon" href="/kreeda.png" type="image/png" />
+    <title>Our Developers | Kreeda-ai</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in-down': 'fadeInDown 1s ease-out',
+                        'fade-in-up': 'fadeInUp 1s ease-out',
+                        'pulse-slow': 'pulseSlow 3s infinite',
+                    },
+                    keyframes: {
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        pulseSlow: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.05)' },
+                        },
+                    },
+                },
+            },
+        };
+    </script>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100 font-sans min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav class="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-10 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="/kreeda.png" alt="Kreeda-ai Logo" class="w-12 h-12 rounded-lg object-cover transform hover:rotate-12 transition duration-300" />
+                <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Kreeda-ai ⚽🏏🏀</h1>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="./index.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition duration-200 font-medium">Home</a>
+                <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition duration-200 font-medium">About</a>
+                <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition duration-200 font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Header -->
-    <header class="bg-gray-800 text-white py-6">
-        <div class="container mx-auto text-center">
-            <h1 class="text-blue-600 text-3xl font-bold">Meet Our Developers</h1>
-            <p class="mt-2 text-lg">The talented team behind our success</p>
+    <header class="bg-gradient-to-r from-gray-800 via-blue-900 to-gray-600 text-white py-16 relative overflow-hidden">
+        <div class="container mx-auto text-center px-4">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-blue-400 drop-shadow-md animate-fade-in-down">Meet Our Developers</h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-200 animate-fade-in-up">The brilliant minds powering Kreeda-ai's sports revolution</p>
+        </div>
+        <div class="absolute inset-0 opacity-10">
+            <div class="w-64 h-64 bg-blue-400 rounded-full absolute -top-32 -left-32 animate-pulse-slow"></div>
+            <div class="w-64 h-64 bg-blue-400 rounded-full absolute -bottom-32 -right-32 animate-pulse-slow"></div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="container mx-auto py-12 px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <main class="container mx-auto py-16 px-4 flex-grow">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Developer 1: Prashant -->
-            <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition duration-300">
-                <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gray-300 flex items-center justify-center">
-                    <span class="text-4xl text-gray-600">P</span>
+            <div class="bg-white rounded-xl shadow-lg p-6 text-center transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-500 to-blue-300 flex items-center justify-center overflow-hidden relative">
+                    <span class="text-5xl font-bold text-white">P</span>
+                    <div class="absolute inset-0 bg-black opacity-0 hover:opacity-20 transition duration-200"></div>
                 </div>
                 <h2 class="text-xl font-semibold text-gray-800">Prashant Kumar Jha</h2>
-                <p class="text-gray-600 mt-2">12314682</p>
-                
+                <p class="text-gray-500 mt-2">ID: 12314682</p>
+                <p class="text-gray-600 mt-3 italic">Lead Developer & Visionary</p>
+                <div class="mt-4 flex justify-center space-x-6">
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transform hover:scale-125 transition duration-200"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transform hover:scale-125 transition duration-200"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transform hover:scale-125 transition duration-200"><i class="fab fa-instagram fa-lg"></i></a>
+                </div>
             </div>
 
             <!-- Developer 2: Ritik -->
-            <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition duration-300">
-                <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gray-300 flex items-center justify-center">
-                    <span class="text-4xl text-gray-600">R</span>
+            <div class="bg-white rounded-xl shadow-lg p-6 text-center transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-500 to-blue-300 flex items-center justify-center overflow-hidden relative">
+                    <span class="text-5xl font-bold text-white">R</span>
+                    <div class="absolute inset-0 bg-black opacity-0 hover:opacity-20 transition duration-200"></div>
                 </div>
                 <h2 class="text-xl font-semibold text-gray-800">Ritik Kumar Barnwal</h2>
-                <p class="text-gray-600 mt-2">12310057</p>
-                
+                <p class="text-gray-500 mt-2">ID: 12310057</p>
+                <p class="text-gray-600 mt-3 italic">Frontend Specialist</p>
+                <div class="mt-4 flex justify-center space-x-6">
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transform hover:scale-125 transition duration-200"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transform hover:scale-125 transition duration-200"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transform hover:scale-125 transition duration-200"><i class="fab fa-instagram fa-lg"></i></a>
+                </div>
             </div>
 
             <!-- Developer 3: Ayush -->
-            <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition duration-300">
-                <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gray-300 flex items-center justify-center">
-                    <span class="text-4xl text-gray-600">A</span>
+            <div class="bg-white rounded-xl shadow-lg p-6 text-center transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-500 to-blue-300 flex items-center justify-center overflow-hidden relative">
+                    <span class="text-5xl font-bold text-white">A</span>
+                    <div class="absolute inset-0 bg-black opacity-0 hover:opacity-20 transition duration-200"></div>
                 </div>
                 <h2 class="text-xl font-semibold text-gray-800">Aayush Choudha</h2>
-                <p class="text-gray-600 mt-2">12312165</p>
-                
+                <p class="text-gray-500 mt-2">ID: 12312165</p>
+                <p class="text-gray-600 mt-3 italic">Backend Guru</p>
+                <div class="mt-4 flex justify-center space-x-6">
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transform hover:scale-125 transition duration-200"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transform hover:scale-125 transition duration-200"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transform hover:scale-125 transition duration-200"><i class="fab fa-instagram fa-lg"></i></a>
+                </div>
             </div>
         </div>
+
+        <!-- Enhanced Sneak Peek Section -->
+        <section id="about" class="mt-16 bg-white rounded-xl shadow-lg p-8 overflow-hidden relative">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-8 animate-fade-in-down">The Power of Kreeda-ai's Intelligence</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="text-gray-700 text-lg leading-relaxed animate-fade-in-up">
+                    <p class="mb-4"><span class="text-blue-600 font-semibold">Kreeda-ai</span> is more than just a chatbot—it's your personal sports oracle, powered by the cutting-edge Gemini AI API.</p>
+                    <p class="mb-4">Our AI analyzes vast amounts of sports data in real-time, delivering precise answers about:</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Live match statistics and scores</li>
+                        <li>Player performance analytics</li>
+                        <li>Historical sports records</li>
+                        <li>Team strategies and predictions</li>
+                    </ul>
+                </div>
+                <div class="text-gray-700 text-lg leading-relaxed animate-fade-in-up delay-200">
+                    <p class="mb-4">Built with advanced features:</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><span class="font-semibold">Firestore Authentication:</span> Secure, user-specific access</li>
+                        <li><span class="font-semibold">Natural Language Processing:</span> Understands complex sports queries</li>
+                        <li><span class="font-semibold">Real-time Updates:</span> Always current with the latest games</li>
+                        <li><span class="font-semibold">Sports-only Focus:</span> No distractions, pure sports expertise</li>
+                    </ul>
+                    <p class="mt-4 italic text-blue-600">Log in to experience the future of sports intelligence!</p>
+                </div>
+            </div>
+            <!-- Animated Background Elements -->
+            <div class="absolute -top-20 -left-20 w-40 h-40 bg-blue-400 opacity-20 rounded-full animate-pulse"></div>
+            <div class="absolute -bottom-20 -right-20 w-40 h-40 bg-blue-400 opacity-20 rounded-full animate-pulse delay-500"></div>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer class="mt-80 bg-gray-800 text-white py-4">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2025 Kreeda-ai Team. All rights reserved.</p>
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto text-center px-4">
+            <p class="text-sm md:text-base">© 2025 Kreeda-ai Team. All rights reserved.</p>
+            <div class="mt-4 flex justify-center space-x-8">
+                <a href="#" class="text-gray-400 hover:text-blue-600 transform hover:scale-125 transition duration-200"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="text-gray-400 hover:text-blue-600 transform hover:scale-125 transition duration-200"><i class="fab fa-linkedin fa-lg"></i></a>
+                <a href="#" class="text-gray-400 hover:text-blue-600 transform hover:scale-125 transition duration-200"><i class="fab fa-github fa-lg"></i></a>
+            </div>
         </div>
     </footer>
+
 </body>
 </html>
